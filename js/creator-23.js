@@ -1703,11 +1703,7 @@ async function bottomInfoEdited() {
 	card.infoArtist = document.querySelector('#info-artist').value;
 	card.infoYear = document.querySelector('#info-year').value;
 	for (var textObject of Object.entries(card.bottomInfo)) {
-		if (["NOT FOR SALE", "Wizards of the Coast", "CardConjurer.com", "cardconjurer.com"].some(v => textObject[1].text.includes(v))) {
-			continue;
-		} else {
-			await writeText(textObject[1], bottomInfoContext);
-		}
+		await writeText(textObject[1], bottomInfoContext);
 		continue;
 	}
 	drawCard();
